@@ -1,8 +1,11 @@
+import Link from "next/link";
 import { getDashboard } from "@/lib/data";
 import { pct, num, dday } from "@/lib/format";
+import { NAME_TO_SLUG } from "@/lib/danji";
 import ProgressBar from "@/components/ProgressBar";
 import IntentBars from "@/components/IntentBars";
 import Legend from "@/components/Legend";
+import Nav from "@/components/Nav";
 
 export const revalidate = 300;
 
@@ -23,6 +26,8 @@ export default async function Home() {
           ⚠️ <b>미리보기(목업) 데이터</b>입니다. 환경변수 <code>SHEET_API_URL</code>에 구글시트 웹앱 URL을 넣으면 실데이터로 전환됩니다.
         </div>
       )}
+
+      <Nav active="" 단지순서={s.단지순서} />
 
       {/* 헤더 */}
       <header className="rounded-2xl bg-[#2b3648] px-6 py-5 text-white shadow-sm">
@@ -78,12 +83,21 @@ export default async function Home() {
 
       {/* 단지별 현황 */}
       <section className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="mb-4 text-lg font-bold">단지별 현황</h2>
-        <div className="space-y-5">
+        <div className="mb-4 flex items-baseline justify-between">
+          <h2 className="text-lg font-bold">단지별 현황</h2>
+          <span className="text-xs text-slate-400">단지 클릭 → 동별 상세</span>
+        </div>
+        <div className="space-y-2">
           {d.단지들.map((c) => (
-            <div key={c.이름}>
+            <Link
+              key={c.이름}
+              href={`/${NAME_TO_SLUG[c.이름] ?? c.이름}`}
+              className="-mx-2 block rounded-xl px-2 py-2 transition-colors hover:bg-slate-50"
+            >
               <div className="mb-1.5 flex items-baseline justify-between">
-                <span className="text-base font-bold">{c.이름}</span>
+                <span className="text-base font-bold">
+                  {c.이름} <span className="text-slate-300">›</span>
+                </span>
                 <span className="text-sm text-slate-500">
                   {num(c.동의수)} / {num(c.세대수)}명 · {c.동수}개동
                 </span>
@@ -96,7 +110,7 @@ export default async function Home() {
                   {pct(c.동의율)}
                 </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
