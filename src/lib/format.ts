@@ -8,14 +8,16 @@ export function num(n: number): string {
   return n.toLocaleString("ko-KR");
 }
 
-// D-day: 마감일까지 남은 일수 (오늘 포함 계산은 하지 않음, 마감 당일 = D-0)
+// D-day: 마감일까지 남은 일수 (마감 당일 = D-0). 서버 타임존과 무관하게 KST 날짜 기준.
 export function dday(마감: string): number {
-  const end = new Date(`${마감}T00:00:00+09:00`);
-  const now = new Date();
-  const kstNow = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Seoul" }));
-  const a = Date.UTC(end.getFullYear(), end.getMonth(), end.getDate());
-  const b = Date.UTC(kstNow.getFullYear(), kstNow.getMonth(), kstNow.getDate());
-  return Math.round((a - b) / 86400000);
+  const [y, m, d] = 마감.split("-").map(Number);
+  if (!y || !m || !d) return 0;
+  const end = Date.UTC(y, m - 1, d);
+  // KST 기준 오늘 (en-CA => "YYYY-MM-DD")
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Seoul" }).format(new Date());
+  const [ty, tm, td] = today.split("-").map(Number);
+  const now = Date.UTC(ty, tm - 1, td);
+  return Math.round((end - now) / 86400000);
 }
 
 // 동의율 8단계(12.5% 간격) 색상 — 참고 이미지 범례와 동일한 초록→파랑→남색 그라데이션
