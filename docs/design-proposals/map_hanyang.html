@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+.wrap{position:relative;width:1283px;height:921px;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif}
+.wrap>img{position:absolute;inset:0;width:1283px;height:921px}
+/* 측정 UI(총반경/지우기) 가리는 골드 라벨 = 관리사무소 라벨 */
+.label{position:absolute;left:1030px;top:184px;width:218px;min-height:104px;
+  background:linear-gradient(135deg,#8a6417,#c8a24a);color:#fff;border-radius:14px;
+  padding:14px 16px;box-shadow:0 6px 18px rgba(0,0,0,.28);display:flex;flex-direction:column;justify-content:center}
+.label .t{font-size:19px;font-weight:800;letter-spacing:-.3px}
+.label .s{font-size:14px;margin-top:3px;color:#fdf6e6}
+/* 원을 향하는 삼각형 포인터 */
+.ptr{position:absolute;left:1016px;top:222px;width:0;height:0;
+  border-top:12px solid transparent;border-bottom:12px solid transparent;border-right:16px solid #8a6417}
+/* 위치 강조 링 (기존 보라원 위에 골드 링을 덧대 통일감) */
+.ring{position:absolute;left:940px;top:143px;width:74px;height:74px;border-radius:50%;
+  border:3px solid #a4791f;background:rgba(164,121,31,.14);box-shadow:0 0 0 3px rgba(255,255,255,.5)}
+.pin{position:absolute;left:966px;top:150px;font-size:26px}
+</style></head><body>
+<div class="wrap">
+  <img src="map_src_hanyang.png" alt="한양 관리사무소 위치">
+  <div class="ring"></div>
+  <div class="pin">📍</div>
+  <div class="ptr"></div>
+  <div class="label"><div class="t">🏢 한양 관리사무소</div><div class="s">동의서 서류 제출처</div></div>
+</div>
+</body></html>
