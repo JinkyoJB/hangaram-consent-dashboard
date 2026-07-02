@@ -128,7 +128,7 @@ export default async function Home() {
       </section>
 
       <footer className="mt-6 pb-4 text-center text-xs text-slate-400">
-        {s.구역명} {s.주체} 및 입주민 재능기부 · 5~10분 간격 자동 갱신
+        {s.구역명} {s.주체} · 5~10분 간격 자동 갱신
       </footer>
     </main>
   );

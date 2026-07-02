@@ -106,7 +106,7 @@ export default async function DanjiPage({
       </section>
 
       <footer className="mt-6 pb-4 text-center text-xs text-slate-400">
-        {d.설정.구역명} {d.설정.주체} 및 입주민 재능기부 · 5~10분 간격 자동 갱신
+        {d.설정.구역명} {d.설정.주체} · 5~10분 간격 자동 갱신
       </footer>
     </main>
   );
