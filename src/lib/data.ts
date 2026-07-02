@@ -1,4 +1,5 @@
 import type { ApiPayload, Dashboard, DanjiSummary, DongRow, Intent } from "./types";
+import { DANJI_DONG } from "./danji";
 
 /** 대시보드 데이터 로드: SHEET_API_URL 있으면 실데이터, 없으면 목업 폴백 */
 export async function getDashboard(): Promise<Dashboard> {
@@ -22,20 +23,32 @@ function build(p: ApiPayload, isMock: boolean): Dashboard {
   const 단지들: DanjiSummary[] = order.map((이름) => {
     const info = p.단지.find((d) => d.단지 === 이름);
     const rows = p.동목록.filter((r) => r.단지 === 이름);
-    const 아파트 = rows.filter((r) => r.구분 === "아파트");
     const 상가 = rows.find((r) => r.구분 === "상가");
     const 세대수 =
       (info?.아파트세대수 ?? 0) + (상가포함 ? info?.상가세대수 ?? 0 : 0);
     const 동의수 = rows
       .filter((r) => 상가포함 || r.구분 === "아파트")
       .reduce((s, r) => s + r.동의수, 0);
+
+    // 기본 동 목록을 항상 표시: 없는 동은 0/미정으로 채우고 API 데이터로 덮어씀
+    const 동map = new Map<string, DongRow>(
+      (DANJI_DONG[이름] ?? []).map((동) => [
+        동,
+        { 단지: 이름, 구분: "아파트" as const, 동, 세대수: 0, 동의수: 0 },
+      ])
+    );
+    for (const r of rows.filter((r) => r.구분 === "아파트")) 동map.set(r.동, r);
+    const 아파트 = [...동map.values()].sort((a, b) =>
+      a.동.localeCompare(b.동, "ko", { numeric: true })
+    );
+
     return {
       이름,
       세대수,
       동의수,
       동의율: 세대수 > 0 ? 동의수 / 세대수 : 0,
       동수: 아파트.length,
-      동목록: 아파트.sort((a, b) => a.동.localeCompare(b.동, "ko", { numeric: true })),
+      동목록: 아파트,
       상가,
     };
   });
