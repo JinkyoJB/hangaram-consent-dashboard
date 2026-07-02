@@ -119,7 +119,7 @@ export default async function Home() {
         <Legend />
       </section>
 
-      <footer className="mt-6 pb-4 text-center text-xs text-slate-400">
+      <footer className="mt-6 pb-4 text-center text-xs text-slate-500">
         {s.구역명} {s.주체} · 5~10분 간격 자동 갱신
       </footer>
     </main>

@@ -168,7 +168,8 @@ function setup_현황파악(ss) {
   var sh = ss.insertSheet('현황파악');
 
   sh.getRange('A1').setValue('평촌 한가람 A-5구역 · 동의 현황 (자동 집계)').setFontWeight('bold').setFontSize(14);
-  sh.getRange('A2').setFormula('="마감 "&TEXT(DATEVALUE(단지정보!B4),"yyyy-mm-dd")&" · D-"&(DATEVALUE(단지정보!B4)-TODAY())&" · 수식 실시간 집계"');
+  // 접수마감을 키로 조회(절대위치 B4 대신) → 단지정보 행 이동에도 안전
+  sh.getRange('A2').setFormula('=LET(m,DATEVALUE(VLOOKUP("접수마감",단지정보!A:B,2,FALSE)),"마감 "&TEXT(m,"yyyy-mm-dd")&" · D-"&(m-TODAY())&" · 수식 실시간 집계")');
 
   /* ── ① 단지별 동의 현황 (행 4~9) ── */
   sh.getRange('A4').setValue('■ 단지별 동의 현황 (아파트+상가 합산)').setFontWeight('bold');

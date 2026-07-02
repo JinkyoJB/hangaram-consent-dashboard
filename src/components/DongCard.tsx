@@ -14,7 +14,12 @@ export default function DongCard({ row, isTop }: { row: DongRow; isTop?: boolean
       style={{ borderLeftColor: bucketColor(rate) }}
     >
       {isTop && (
-        <span className="absolute -top-3 right-2 text-xl" title="최고 동의율">
+        <span
+          className="absolute -top-3 right-2 text-xl"
+          role="img"
+          aria-label="최고 동의율 동"
+          title="최고 동의율"
+        >
           👑
         </span>
       )}

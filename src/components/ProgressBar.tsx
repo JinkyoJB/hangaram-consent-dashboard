@@ -10,14 +10,21 @@ interface Props {
   markers?: Marker[];
   height?: number;
   showTicks?: boolean;
+  ariaLabel?: string;
 }
 
 /** 동의율 진행바 — 구간 색상 + 5% 눈금 + 과반/목표 마커 */
-export default function ProgressBar({ rate, markers = [], height = 14, showTicks = true }: Props) {
+export default function ProgressBar({ rate, markers = [], height = 14, showTicks = true, ariaLabel }: Props) {
   const clamped = Math.min(1, Math.max(0, rate));
+  const pctInt = Math.round(clamped * 100);
   return (
     <div className="w-full">
       <div
+        role="progressbar"
+        aria-valuenow={pctInt}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label={ariaLabel ?? `동의율 ${pctInt}%`}
         className="relative w-full overflow-hidden rounded-full bg-slate-200/70"
         style={{ height }}
       >

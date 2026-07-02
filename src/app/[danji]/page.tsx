@@ -105,7 +105,7 @@ export default async function DanjiPage({
         <Legend />
       </section>
 
-      <footer className="mt-6 pb-4 text-center text-xs text-slate-400">
+      <footer className="mt-6 pb-4 text-center text-xs text-slate-500">
         {d.설정.구역명} {d.설정.주체} · 5~10분 간격 자동 갱신
       </footer>
     </main>

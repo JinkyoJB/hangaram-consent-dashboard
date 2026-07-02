@@ -20,6 +20,7 @@ export default function Nav({ active, 단지순서 }: Props) {
           <Link
             key={t.href}
             href={t.href}
+            aria-current={on ? "page" : undefined}
             className={`rounded-full px-4 py-1.5 text-sm font-semibold whitespace-nowrap transition-colors ${
               on
                 ? "bg-[#2b3648] text-white"
