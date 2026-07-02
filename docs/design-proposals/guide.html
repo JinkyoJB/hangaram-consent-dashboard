@@ -1,0 +1,98 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
+@page{size:A4;margin:11mm}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;color:#1c1c22;font-size:16px;line-height:1.38}
+.top{border-bottom:4px solid #c8a24a;padding-bottom:9px;margin-bottom:13px}
+.top .k{color:#a4791f;font-weight:800;font-size:14px}
+.top h1{font-size:26px;font-weight:800;margin-top:3px}
+.top .s{font-size:17px;color:#444;margin-top:5px}
+.step{display:flex;gap:14px;align-items:flex-start;border:2px solid #eadfc4;border-radius:12px;padding:11px 15px;margin-bottom:9px;break-inside:avoid}
+.num{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:#1c1c22;color:#e8c977;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.body{flex:1}
+.body h2{font-size:20px;font-weight:800}
+.body p{font-size:16px;color:#333;margin-top:2px}
+.illust{margin-top:7px}
+/* 시트 행 그림 */
+.sheet{border:2px solid #cbb98a;border-radius:8px;overflow:hidden;font-size:15px;max-width:520px}
+.row{display:grid;grid-template-columns:60px 60px 70px 1fr 1fr}
+.row.hd{background:#efe8d5;font-weight:800}
+.cell{padding:7px 6px;border-right:1px solid #e6ddc4;border-top:1px solid #e6ddc4;text-align:center}
+.row.hd .cell{border-top:0}
+.cell:last-child{border-right:0}
+.chk{display:inline-block;width:20px;height:20px;border:2px solid #999;border-radius:4px;vertical-align:middle;background:#fff}
+.chk.on{background:#a4791f;border-color:#a4791f;color:#fff;font-weight:800;line-height:18px}
+.arrow{font-size:22px;color:#a4791f;font-weight:800;margin:0 8px;vertical-align:middle}
+.tabs{display:flex;gap:8px}
+.tab{border:2px solid #cbb98a;border-radius:20px;padding:6px 18px;font-weight:800;font-size:16px}
+.tab.on{background:#1c1c22;color:#fff;border-color:#1c1c22}
+.dd{display:inline-block;border:2px solid #a4791f;border-radius:6px;padding:5px 12px;font-weight:700;background:#fff}
+.ddlist{display:inline-block;border:2px solid #ddd;border-radius:6px;margin-left:8px;overflow:hidden;vertical-align:middle}
+.ddlist span{display:inline-block;padding:5px 14px;border-right:1px solid #eee;font-weight:700}
+.ddlist span.pick{background:#faf3e2;color:#a4791f}
+.warn{border:2px solid #e0b53a;background:#fdf7e6;border-radius:12px;padding:12px 18px;margin-top:4px;break-inside:avoid}
+.warn h3{font-size:18px;font-weight:800;color:#9a6b0e}
+.warn ul{margin:6px 0 0 22px}
+.warn li{font-size:16px;margin-top:4px}
+.big{font-size:18px;font-weight:800;color:#a4791f}
+.foot{margin-top:12px;text-align:center;color:#666;font-size:13px;border-top:1px solid #e6ddc4;padding-top:9px}
+.hint{font-size:14px;color:#8a7f66;margin-top:4px}
+</style></head><body>
+
+<div class="top">
+  <div class="k">평촌 한가람 A-5구역 주민대표단</div>
+  <h1>📋 동의 현황 입력 방법</h1>
+  <div class="s">구글시트에 <b>5단계</b>면 끝납니다. 천천히 따라 하세요.</div>
+</div>
+
+<div class="step"><div class="num">1</div><div class="body">
+  <h2>링크 열기</h2>
+  <p>카톡으로 받은 <b>구글시트 링크</b>를 손가락으로 한 번 누릅니다.</p>
+</div></div>
+
+<div class="step"><div class="num">2</div><div class="body">
+  <h2>담당 단지 고르기</h2>
+  <p>화면 <b>아래쪽</b>의 단지 이름 중 <b>내가 맡은 단지</b>를 누릅니다.</p>
+  <div class="illust"><div class="tabs"><span class="tab on">한양</span><span class="tab">삼성</span><span class="tab">두산</span></div></div>
+</div></div>
+
+<div class="step"><div class="num">3</div><div class="body">
+  <h2>세대(동·호) 줄 찾기</h2>
+  <p>그 세대의 <b>‘동’과 ‘호’</b>가 적힌 줄을 찾습니다.</p>
+  <div class="hint">※ 많으면 맨 윗줄의 <b>필터 ▽</b> 를 눌러 호수로 검색하거나, 키보드 <b>Ctrl+F</b> 로 찾으세요.</div>
+  <div class="illust"><div class="sheet">
+    <div class="row hd"><div class="cell">동</div><div class="cell">호</div><div class="cell">동의</div><div class="cell">통합/제자리</div><div class="cell">신탁/조합</div></div>
+    <div class="row"><div class="cell">301</div><div class="cell">101</div><div class="cell"><span class="chk"></span></div><div class="cell"></div><div class="cell"></div></div>
+  </div></div>
+</div></div>
+
+<div class="step"><div class="num">4</div><div class="body">
+  <h2>‘동의’ 네모 누르기 ✔</h2>
+  <p>동의한 세대면 <b>‘동의’ 칸의 네모</b>를 눌러 <b>✔</b> 표시합니다.</p>
+  <div class="illust" style="font-size:20px">
+    <span class="chk"></span><span class="arrow">→</span><span class="chk on">✔</span>
+    <span class="big" style="margin-left:14px">네모만 누르면 됩니다</span>
+  </div>
+</div></div>
+
+<div class="step"><div class="num">5</div><div class="body">
+  <h2>두 가지 골라 누르기</h2>
+  <p><b>통합/제자리</b>, <b>신탁/조합</b> 칸을 각각 눌러 목록에서 하나를 고릅니다.</p>
+  <div class="illust">
+    <span class="dd">통합/제자리 ▽</span>
+    <span class="ddlist"><span class="pick">통합</span><span>제자리</span></span>
+  </div>
+</div></div>
+
+<div class="warn">
+  <h3>⚠️ 꼭 기억하세요</h3>
+  <ul>
+    <li><b>‘동의’ 칸엔 숫자·글자를 쓰지 마세요.</b> 네모(✔)만 누릅니다.</li>
+    <li>잘못 눌렀으면 <b>다시 한 번 눌러</b> 표시를 해제할 수 있어요.</li>
+    <li><b>저장 버튼이 없습니다.</b> 누르는 즉시 자동으로 저장됩니다.</li>
+    <li>이름·연락처 같은 <b>개인정보는 적지 않습니다.</b></li>
+  </ul>
+</div>
+
+<div class="foot">입력하면 5~10분 안에 현황 사이트에 자동 반영됩니다 · 문의: 주민대표단</div>
+
+</body></html>
