@@ -45,14 +45,14 @@ export default function ProgressBar({ rate, markers = [], height = 14, showTicks
         {markers.map((m) => (
           <div
             key={m.label}
-            className="absolute top-0 h-full w-px bg-slate-500/80"
+            className="absolute top-0 h-full w-px bg-[#8b8578]/80"
             style={{ left: `${m.at * 100}%` }}
           />
         ))}
       </div>
       {/* 마커 라벨 */}
       {markers.length > 0 && (
-        <div className="relative mt-1 h-4 text-[11px] font-medium text-slate-500">
+        <div className="relative mt-1 h-4 text-[11px] font-medium text-[#8b8578]">
           {markers.map((m) => (
             <span
               key={m.label}

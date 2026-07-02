@@ -3,7 +3,7 @@ import { LEGEND } from "@/lib/format";
 /** 동의율 8단계 색상 범례 */
 export default function Legend() {
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] text-slate-500">
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] text-[#8b8578]">
       {LEGEND.map((l) => (
         <span key={l.label} className="inline-flex items-center gap-1.5">
           <span
@@ -13,7 +13,7 @@ export default function Legend() {
           {l.label}
         </span>
       ))}
-      <span className="ml-auto text-slate-400">막대 눈금 = 5% 단위</span>
+      <span className="ml-auto text-[#a99f86]">막대 눈금 = 5% 단위</span>
     </div>
   );
 }

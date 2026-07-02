@@ -1,0 +1,108 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#eef5f4;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif}
+  .page{width:800px;min-height:1360px;padding:26px}
+  .card{background:#ffffff;border-radius:18px;box-shadow:0 1px 3px rgba(15,60,55,.08);padding:24px;margin-top:18px;border:1px solid #e2eeeb}
+  /* 헤더 */
+  .header{background:#ffffff;border:1px solid #d5e8e4;border-radius:18px;padding:24px 26px;position:relative;overflow:hidden}
+  .region{font-size:15px;font-weight:700;color:#0d9488;letter-spacing:-.2px;display:flex;align-items:center;gap:8px}
+  .dot{width:9px;height:9px;border-radius:50%;background:#0d9488}
+  .htitle{font-size:30px;font-weight:800;margin-top:6px;color:#0f3d38;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif}
+  .hsub{font-size:12px;margin-top:5px;color:#5b8a83}
+  .official{position:absolute;top:24px;right:26px;text-align:right;color:#5b8a83;font-size:12px}
+  .badge{border:1px solid #5b8a83;border-radius:6px;padding:3px 9px;font-weight:700;letter-spacing:2px}
+  /* 전체율 */
+  .rlabel{font-size:14px;color:#6b8f89}
+  .bignum{font-size:66px;font-weight:800;line-height:1;color:#0f766e;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;}
+  .bignum small{font-size:30px}
+  .dday{background:#0f766e;color:#ffffff;border-radius:14px;padding:10px 16px;text-align:right}
+  .dday b{font-size:26px;font-weight:800;display:block;line-height:1}
+  .dday span{font-size:11px;opacity:.85}
+  .barwrap{position:relative;margin-top:6px}
+  .bar{position:relative;width:100%;border-radius:999px;background:#d7ebe7;overflow:hidden}
+  .fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#2dd4bf,#0d9488)}
+  .ticks{position:absolute;inset:0;display:flex}
+  .ticks i{flex:1;border-right:1px solid rgba(255,255,255,.65)}
+  .ticks i:last-child{border:0}
+  .mk{position:absolute;top:0;height:100%;width:1px;background:#6b8f89}
+  .mkl{position:absolute;top:22px;font-size:11px;color:#6b8f89;transform:translateX(-50%);white-space:nowrap;font-weight:600}
+  .mkrow{height:20px}
+  /* 지표 */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e2eeeb;border-radius:12px;overflow:hidden;margin-top:26px;border:1px solid #e2eeeb}
+  .stat{background:#ffffff;padding:14px 12px}
+  .stat .k{font-size:12px;color:#6b8f89}
+  .stat .v{font-size:24px;font-weight:800;margin-top:2px}
+  .stat .v.acc{color:#0d9488}
+  .stat .u{font-size:13px;color:#6b8f89;font-weight:500;margin-left:2px}
+  /* 단지 */
+  h2{font-size:18px;font-weight:800;margin-bottom:14px;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;color:#0f2e2b}
+  .drow{padding:8px 0}
+  .dtop{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+  .dname{font-size:16px;font-weight:800}
+  .dmeta{font-size:13px;color:#6b8f89}
+  .dline{display:flex;align-items:center;gap:12px}
+  .dpct{width:66px;text-align:right;font-size:19px;font-weight:800;color:#0d9488}
+  /* 범례 */
+  .legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:11px;color:#6b8f89;align-items:center}
+  .lg{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:12px;height:12px;border-radius:3px}
+  .foot{margin-top:20px;text-align:center;font-size:12px;color:#6b8f89}
+  .themeTag{margin:0 0 14px;font-size:13px;font-weight:800;color:#0d9488;letter-spacing:.3px}
+  </style></head><body><div class="page">
+    <div class="themeTag">① 민트 틸 · 라이트 헤더</div>
+    <div class="header">
+      <div class="official"><span class="badge">OFFICIAL</span><div style="margin-top:8px">갱신 2026.07.03 20:00</div></div>
+      <div class="region"><span class="dot"></span>평촌 한가람 A-5구역 주민대표단</div>
+      <div class="htitle">동의 현황 대시보드</div>
+      <div class="hsub">한가람 한양 · 삼성 · 두산 통합재건축</div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end">
+        <div><div class="rlabel">전체 동의율</div><div class="bignum">31.2<small>%</small></div></div>
+        <div class="dday"><b>D-26</b><span>접수마감 2026-07-29</span></div>
+      </div>
+      <div class="barwrap"><div class="bar" style="height:16px">
+      <div class="fill" style="width:31.2%"></div>
+      <div class="ticks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="mk" style="left:50%"></span><span class="mk" style="left:81%"></span>
+       <span class="mkl" style="left:50%">과반 50%</span><span class="mkl" style="left:81%">목표 81%</span>
+    </div><div class="mkrow"></div></div>
+      <div class="stats">
+        <div class="stat"><div class="k">총 세대수</div><div class="v">2,096<span class="u">세대</span></div></div>
+        <div class="stat"><div class="k">동의 수</div><div class="v acc">654<span class="u">세대</span></div></div>
+        <div class="stat"><div class="k">미동의</div><div class="v">1,442<span class="u">세대</span></div></div>
+        <div class="stat"><div class="k">목표(81%)까지</div><div class="v">1,044<span class="u">명</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>단지별 현황</h2>
+      <div class="drow">
+        <div class="dtop"><span class="dname">한양 ›</span><span class="dmeta">306 / 952명 · 8개동</span></div>
+        <div class="dline"><div style="flex:1"><div class="barwrap"><div class="bar" style="height:16px">
+      <div class="fill" style="width:32.1%"></div>
+      <div class="ticks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div></div></div><span class="dpct">32.1%</span></div>
+      </div><div class="drow">
+        <div class="dtop"><span class="dname">삼성 ›</span><span class="dmeta">211 / 708명 · 10개동</span></div>
+        <div class="dline"><div style="flex:1"><div class="barwrap"><div class="bar" style="height:16px">
+      <div class="fill" style="width:29.8%"></div>
+      <div class="ticks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div></div></div><span class="dpct">29.8%</span></div>
+      </div><div class="drow">
+        <div class="dtop"><span class="dname">두산 ›</span><span class="dmeta">135 / 436명 · 6개동</span></div>
+        <div class="dline"><div style="flex:1"><div class="barwrap"><div class="bar" style="height:16px">
+      <div class="fill" style="width:31%"></div>
+      <div class="ticks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div></div></div><span class="dpct">31%</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="legend">
+        <span class="lg"><span class="sw" style="background:#cfe9d8"></span>0–12.5%</span><span class="lg"><span class="sw" style="background:#9fd6b4"></span>12.5–25%</span><span class="lg"><span class="sw" style="background:#5cbd8a"></span>25–37.5%</span><span class="lg"><span class="sw" style="background:#38a86b"></span>37.5–50%</span><span class="lg"><span class="sw" style="background:#4aa6cf"></span>50–62.5%</span><span class="lg"><span class="sw" style="background:#3b82c4"></span>62.5–75%</span><span class="lg"><span class="sw" style="background:#28579f"></span>75–87.5%</span><span class="lg"><span class="sw" style="background:#1e3a6b"></span>87.5–100%</span>
+        <span style="margin-left:auto;opacity:.7">막대 눈금 = 5%</span>
+      </div>
+    </div>
+    <div class="foot">평촌 한가람 A-5구역 주민대표단 · 5~10분 간격 자동 갱신</div>
+  </div></body></html>

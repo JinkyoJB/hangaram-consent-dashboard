@@ -23,8 +23,8 @@ export default function Nav({ active, 단지순서 }: Props) {
             aria-current={on ? "page" : undefined}
             className={`rounded-full px-4 py-1.5 text-sm font-semibold whitespace-nowrap transition-colors ${
               on
-                ? "bg-[#2b3648] text-white"
-                : "bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-100"
+                ? "bg-[#1c1c22] text-white"
+                : "bg-white text-[#6b6459] ring-1 ring-[#e3dccb] hover:bg-[#f1ece1]"
             }`}
           >
             {t.label}

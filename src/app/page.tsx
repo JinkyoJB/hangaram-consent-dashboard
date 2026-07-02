@@ -19,7 +19,7 @@ export default async function Home() {
   });
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-6 text-slate-800 sm:px-6">
+    <main className="mx-auto w-full max-w-3xl px-4 py-6 text-[#2a2723] sm:px-6">
       {d.isMock && (
         <div className="mb-4 rounded-lg border border-amber-300 bg-amber-50 px-4 py-2 text-sm text-amber-800">
           ⚠️ <b>미리보기(목업) 데이터</b>입니다. 환경변수 <code>SHEET_API_URL</code>에 구글시트 웹앱 URL을 넣으면 실데이터로 전환됩니다.
@@ -29,18 +29,18 @@ export default async function Home() {
       <Nav active="" 단지순서={s.단지순서} />
 
       {/* 헤더 */}
-      <header className="rounded-2xl bg-[#2b3648] px-6 py-5 text-white shadow-sm">
+      <header className="rounded-2xl bg-[#1c1c22] px-6 py-5 text-white shadow-sm">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <div className="flex items-center gap-2 text-sm font-semibold tracking-tight text-emerald-300">
-              <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
+            <div className="flex items-center gap-2 text-sm font-semibold tracking-tight text-[#c8a24a]">
+              <span className="inline-block h-2 w-2 rounded-full bg-[#c8a24a]" />
               {s.구역명} {s.주체}
             </div>
-            <h1 className="mt-1 text-2xl font-bold sm:text-3xl">동의 현황 대시보드</h1>
-            <p className="mt-1 text-xs text-slate-300">한가람 한양 · 삼성 · 두산 통합재건축</p>
+            <h1 className="serif mt-1 text-2xl font-bold sm:text-3xl">동의 현황 대시보드</h1>
+            <p className="mt-1 text-xs text-[#a99f86]">한가람 한양 · 삼성 · 두산 통합재건축</p>
           </div>
-          <div className="text-right text-xs text-slate-300">
-            <span className="rounded border border-slate-400 px-2 py-0.5 font-semibold tracking-widest">
+          <div className="text-right text-xs text-[#a99f86]">
+            <span className="rounded border border-[#a99f86]/60 px-2 py-0.5 font-semibold tracking-widest">
               OFFICIAL
             </span>
             <div className="mt-2">갱신 {갱신}</div>
@@ -49,11 +49,11 @@ export default async function Home() {
       </header>
 
       {/* 전체 동의율 */}
-      <section className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <section className="mt-5 rounded-2xl border border-[#ece7dc] bg-white p-6 shadow-sm">
         <div className="flex items-end justify-between">
           <div>
-            <div className="text-sm text-slate-500">전체 동의율</div>
-            <div className="mt-1 text-5xl font-extrabold tracking-tight sm:text-6xl">
+            <div className="text-sm text-[#8b8578]">전체 동의율</div>
+            <div className="serif mt-1 text-5xl font-extrabold tracking-tight text-[#1c1c22] sm:text-6xl">
               {pct(d.전체.동의율)}
             </div>
           </div>
@@ -72,7 +72,7 @@ export default async function Home() {
         </div>
 
         {/* 지표 4종 */}
-        <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-slate-200 bg-slate-200 sm:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[#ece7dc] bg-[#ece7dc] sm:grid-cols-4">
           <Stat label="총 세대수" value={num(d.전체.세대수)} unit="세대" />
           <Stat label="동의 수" value={num(d.전체.동의수)} unit="세대" accent />
           <Stat label="미동의" value={num(d.전체.세대수 - d.전체.동의수)} unit="세대" />
@@ -81,17 +81,17 @@ export default async function Home() {
       </section>
 
       {/* 단지별 현황 */}
-      <section className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <section className="mt-5 rounded-2xl border border-[#ece7dc] bg-white p-6 shadow-sm">
         <div className="mb-4 flex items-baseline justify-between">
-          <h2 className="text-lg font-bold">단지별 현황</h2>
-          <span className="text-xs text-slate-400">단지 클릭 → 동별 상세</span>
+          <h2 className="serif text-lg font-bold">단지별 현황</h2>
+          <span className="text-xs text-[#8b8578]">단지 클릭 → 동별 상세</span>
         </div>
         <div className="space-y-2">
           {d.단지들.map((c) => (
             <Link
               key={c.이름}
               href={`/${NAME_TO_SLUG[c.이름] ?? c.이름}`}
-              className="-mx-2 block rounded-xl px-2 py-2 transition-colors hover:bg-slate-50"
+              className="-mx-2 block rounded-xl px-2 py-2 transition-colors hover:bg-[#faf8f2]"
             >
               <div className="mb-1.5 flex items-baseline justify-between">
                 <span className="text-base font-bold">
@@ -105,7 +105,7 @@ export default async function Home() {
                 <div className="flex-1">
                   <ProgressBar rate={c.동의율} height={12} />
                 </div>
-                <span className="w-16 shrink-0 text-right text-lg font-bold text-emerald-600">
+                <span className="w-16 shrink-0 text-right text-lg font-bold text-[#a4791f]">
                   {pct(c.동의율)}
                 </span>
               </div>
@@ -115,7 +115,7 @@ export default async function Home() {
       </section>
 
       {/* 범례 */}
-      <section className="mt-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <section className="mt-5 rounded-2xl border border-[#ece7dc] bg-white p-5 shadow-sm">
         <Legend />
       </section>
 
@@ -139,10 +139,10 @@ function Stat({
 }) {
   return (
     <div className="bg-white px-4 py-3">
-      <div className="text-xs text-slate-500">{label}</div>
-      <div className={`mt-0.5 text-2xl font-bold ${accent ? "text-emerald-600" : "text-slate-800"}`}>
+      <div className="text-xs text-[#8b8578]">{label}</div>
+      <div className={`mt-0.5 text-2xl font-bold ${accent ? "text-[#a4791f]" : "text-[#1c1c22]"}`}>
         {value}
-        {unit && <span className="ml-0.5 text-sm font-medium text-slate-400">{unit}</span>}
+        {unit && <span className="ml-0.5 text-sm font-medium text-[#a99f86]">{unit}</span>}
       </div>
     </div>
   );
@@ -151,9 +151,9 @@ function Stat({
 function DdayBadge({ d, 마감 }: { d: number; 마감: string }) {
   const label = d > 0 ? `D-${d}` : d === 0 ? "D-DAY" : "마감";
   return (
-    <div className="rounded-xl bg-slate-900 px-4 py-2 text-right text-white">
-      <div className="text-2xl font-extrabold leading-none">{label}</div>
-      <div className="mt-1 text-[11px] text-slate-300">접수마감 {마감}</div>
+    <div className="rounded-xl bg-[#1c1c22] px-4 py-2 text-right">
+      <div className="text-2xl font-extrabold leading-none text-[#e8c977]">{label}</div>
+      <div className="mt-1 text-[11px] text-[#a99f86]">접수마감 {마감}</div>
     </div>
   );
 }

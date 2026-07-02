@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #1e293b;
+  --background: #f6f4ef;
+  --foreground: #1c1c22;
 }
 
 @theme inline {
@@ -11,7 +11,14 @@
 }
 
 body {
+  background: var(--background);
   color: var(--foreground);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic",
     "Apple SD Gothic Neo", "Noto Sans KR", Roboto, sans-serif;
+}
+
+/* 프리미엄 명조체 제목 (미설치 기기는 시스템 세리프로 우아하게 폴백) */
+.serif {
+  font-family: "Nanum Myeongjo", "AppleMyungjo", "Batang", serif;
+  letter-spacing: -0.01em;
 }

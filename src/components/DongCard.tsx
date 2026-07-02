@@ -10,7 +10,7 @@ export default function DongCard({ row, isTop }: { row: DongRow; isTop?: boolean
 
   return (
     <div
-      className="relative rounded-xl border border-slate-200 border-l-4 bg-white p-3.5 shadow-sm"
+      className="relative rounded-xl border border-[#ece7dc] border-l-4 bg-white p-3.5 shadow-sm"
       style={{ borderLeftColor: bucketColor(rate) }}
     >
       {isTop && (
@@ -24,13 +24,13 @@ export default function DongCard({ row, isTop }: { row: DongRow; isTop?: boolean
         </span>
       )}
       <div className="mb-1.5 flex items-baseline justify-between">
-        <span className="text-base font-bold text-slate-800">{이름}</span>
-        <span className="text-lg font-extrabold text-emerald-600">
+        <span className="text-base font-bold text-[#1c1c22]">{이름}</span>
+        <span className="text-lg font-extrabold text-[#a4791f]">
           {has ? pct(rate) : "—"}
         </span>
       </div>
       <ProgressBar rate={rate} height={8} showTicks={false} />
-      <div className="mt-1.5 text-xs text-slate-500">
+      <div className="mt-1.5 text-xs text-[#8b8578]">
         {has ? `${num(row.동의수)} / ${num(row.세대수)}명` : `${num(row.동의수)}명 동의 · 세대수 미정`}
       </div>
     </div>
