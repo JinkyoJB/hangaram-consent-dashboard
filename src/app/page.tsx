@@ -3,7 +3,6 @@ import { getDashboard } from "@/lib/data";
 import { pct, num, dday } from "@/lib/format";
 import { NAME_TO_SLUG } from "@/lib/danji";
 import ProgressBar from "@/components/ProgressBar";
-import IntentBars from "@/components/IntentBars";
 import Legend from "@/components/Legend";
 import Nav from "@/components/Nav";
 
@@ -113,13 +112,6 @@ export default async function Home() {
             </Link>
           ))}
         </div>
-      </section>
-
-      {/* 의향 집계 */}
-      <section className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="mb-1 text-lg font-bold">의향 집계</h2>
-        <p className="mb-4 text-xs text-slate-400">응답 세대 기준 · 통합/제자리 · 신탁/조합</p>
-        <IntentBars intent={d.의향.전체} />
       </section>
 
       {/* 범례 */}
