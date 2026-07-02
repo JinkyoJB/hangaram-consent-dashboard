@@ -34,7 +34,7 @@ export default async function DanjiPage({
       : null;
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-6 text-[#2a2723] sm:px-6">
+    <main className="mx-auto w-full max-w-3xl px-4 py-6 text-[var(--text)] sm:px-6">
       {d.isMock && (
         <div className="mb-4 rounded-lg border border-amber-300 bg-amber-50 px-4 py-2 text-sm text-amber-800">
           ⚠️ <b>미리보기(목업) 데이터</b>입니다. <code>SHEET_API_URL</code> 연결 시 실데이터로 전환됩니다.
@@ -44,7 +44,7 @@ export default async function DanjiPage({
       <Nav active={name} 단지순서={d.설정.단지순서} />
 
       {/* 단지 요약 헤더 */}
-      <header className="rounded-2xl bg-[#1c1c22] px-6 py-5 text-white shadow-sm">
+      <header className="rounded-2xl bg-[var(--header)] px-6 py-5 text-white shadow-sm">
         <div className="flex items-end justify-between">
           <div>
             <div className="text-xs font-semibold tracking-tight text-[#c8a24a]">
@@ -76,7 +76,7 @@ export default async function DanjiPage({
       <section className="mt-5">
         <h2 className="serif mb-3 text-lg font-bold">동별 현황</h2>
         {c.동목록.length === 0 ? (
-          <p className="rounded-xl border border-dashed border-[#d8cfbc] bg-white p-6 text-center text-sm text-[#8b8578]">
+          <p className="rounded-xl border border-dashed border-[var(--dashed)] bg-[var(--card)] p-6 text-center text-sm text-[var(--muted)]">
             아직 등록된 동/호 데이터가 없습니다. 구글시트에 입력되면 표시됩니다.
           </p>
         ) : (
@@ -92,7 +92,7 @@ export default async function DanjiPage({
       {c.상가 && (
         <section className="mt-5">
           <h2 className="serif mb-3 text-lg font-bold">
-            상가 <span className="text-sm font-normal text-[#8b8578]">{c.이름} 상가</span>
+            상가 <span className="text-sm font-normal text-[var(--muted)]">{c.이름} 상가</span>
           </h2>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             <DongCard row={c.상가} />
@@ -101,11 +101,11 @@ export default async function DanjiPage({
       )}
 
       {/* 범례 */}
-      <section className="mt-5 rounded-2xl border border-[#ece7dc] bg-white p-5 shadow-sm">
+      <section className="mt-5 rounded-2xl border border-[var(--bd)] bg-[var(--card)] p-5 shadow-sm">
         <Legend />
       </section>
 
-      <footer className="mt-6 pb-4 text-center text-xs text-slate-500">
+      <footer className="mt-6 pb-4 text-center text-xs text-[var(--muted)]">
         {d.설정.구역명} {d.설정.주체} · 5~10분 간격 자동 갱신
       </footer>
     </main>

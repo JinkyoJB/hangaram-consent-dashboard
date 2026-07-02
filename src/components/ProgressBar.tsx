@@ -25,7 +25,7 @@ export default function ProgressBar({ rate, markers = [], height = 14, showTicks
         aria-valuemin={0}
         aria-valuemax={100}
         aria-label={ariaLabel ?? `동의율 ${pctInt}%`}
-        className="relative w-full overflow-hidden rounded-full bg-slate-200/70"
+        className="relative w-full overflow-hidden rounded-full bg-[var(--track)]"
         style={{ height }}
       >
         {/* 채움 */}
@@ -52,7 +52,7 @@ export default function ProgressBar({ rate, markers = [], height = 14, showTicks
       </div>
       {/* 마커 라벨 */}
       {markers.length > 0 && (
-        <div className="relative mt-1 h-4 text-[11px] font-medium text-[#8b8578]">
+        <div className="relative mt-1 h-4 text-[11px] font-medium text-[var(--muted)]">
           {markers.map((m) => (
             <span
               key={m.label}

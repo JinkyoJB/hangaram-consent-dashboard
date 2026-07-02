@@ -2,10 +2,14 @@
 @page{size:A4;margin:11mm}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;color:#1c1c22;font-size:16px;line-height:1.38}
-.top{border-bottom:4px solid #c8a24a;padding-bottom:9px;margin-bottom:13px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;border-bottom:4px solid #c8a24a;padding-bottom:9px;margin-bottom:12px}
 .top .k{color:#a4791f;font-weight:800;font-size:14px}
 .top h1{font-size:26px;font-weight:800;margin-top:3px}
 .top .s{font-size:17px;color:#444;margin-top:5px}
+.qr{flex:0 0 auto;text-align:center}
+.qr img{width:84px;height:84px;display:block}
+.qrcap{font-size:11px;color:#6b6459;margin-top:2px;line-height:1.25}
+.qrcap b{color:#a4791f;font-size:11px}
 .step{display:flex;gap:14px;align-items:flex-start;border:2px solid #eadfc4;border-radius:12px;padding:11px 15px;margin-bottom:9px;break-inside:avoid}
 .num{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:#1c1c22;color:#e8c977;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center}
 .body{flex:1}
@@ -39,9 +43,15 @@ body{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;color:#1c1c22;
 </style></head><body>
 
 <div class="top">
-  <div class="k">평촌 한가람 A-5구역 주민대표단</div>
-  <h1>📋 동의 현황 입력 방법</h1>
-  <div class="s">구글시트에 <b>5단계</b>면 끝납니다. 천천히 따라 하세요.</div>
+  <div class="tl">
+    <div class="k">평촌 한가람 A-5구역 주민대표단</div>
+    <h1>📋 동의 현황 입력 방법</h1>
+    <div class="s">구글시트에 <b>5단계</b>면 끝납니다. 천천히 따라 하세요.</div>
+  </div>
+  <div class="qr">
+    <img src="qr.png" alt="현황 사이트 QR">
+    <div class="qrcap">📱 실시간 현황<br><b>hangaram.vercel.app</b></div>
+  </div>
 </div>
 
 <div class="step"><div class="num">1</div><div class="body">
