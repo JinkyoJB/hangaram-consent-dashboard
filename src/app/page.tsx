@@ -40,8 +40,8 @@ export default async function Home() {
             <p className="mt-1 text-xs text-[#a99f86]">한가람 한양 · 삼성 · 두산 통합재건축</p>
           </div>
           <div className="text-right text-xs text-[#a99f86]">
-            <span className="rounded border border-[#a99f86]/60 px-2 py-0.5 font-semibold tracking-widest">
-              OFFICIAL
+            <span className="rounded border border-amber-400/70 px-2 py-0.5 font-semibold tracking-widest text-amber-300">
+              DEMO
             </span>
             <div className="mt-2">갱신 {갱신}</div>
           </div>
